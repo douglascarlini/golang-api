@@ -1,0 +1,175 @@
+{
+    "/actions/{id}": {
+        "get": {
+            "tags": [
+                "action"
+            ],
+            "summary": "Get object by ID",
+            "description": "",
+            "security": [
+                {
+                    "Bearer": []
+                }
+            ],
+            "produces": [
+                "application/json"
+            ],
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "description": "The ID that needs to be fetched",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "successful operation",
+                    "schema": {
+                        "$ref": "#/definitions/Action"
+                    }
+                },
+                "404": {
+                    "description": "Item not found"
+                }
+            }
+        },
+        "put": {
+            "tags": [
+                "action"
+            ],
+            "summary": "Updated object by ID",
+            "description": "This can only be done by the logged in user.",
+            "security": [
+                {
+                    "Bearer": []
+                }
+            ],
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "application/json"
+            ],
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "description": "The ID that need to be updated",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "in": "body",
+                    "name": "body",
+                    "description": "Updated object",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/Action"
+                    }
+                }
+            ],
+            "responses": {
+                "201": {
+                    "description": "Success"
+                },
+                "404": {
+                    "description": "Not found"
+                },
+                "400": {
+                    "description": "Invalid object supplied"
+                }
+            }
+        },
+        "delete": {
+            "tags": [
+                "action"
+            ],
+            "summary": "Delete object by ID",
+            "description": "This can only be done by the logged in user.",
+            "security": [
+                {
+                    "Bearer": []
+                }
+            ],
+            "produces": [
+                "application/json"
+            ],
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "description": "The ID that needs to be deleted",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "responses": {
+                "201": {
+                    "description": "Success"
+                },
+                "404": {
+                    "description": "Not found"
+                }
+            }
+        }
+    },
+    "/actions": {
+        "post": {
+            "tags": [
+                "action"
+            ],
+            "summary": "Create object",
+            "description": "This can only be done by the logged in user.",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "application/json"
+            ],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "body",
+                    "description": "Created object",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/Action"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "scheme": {
+                        "$ref": "#/definitions/ID"
+                    }
+                }
+            }
+        },
+        "get": {
+            "tags": [
+                "action"
+            ],
+            "summary": "Get object list",
+            "description": "This can only be done by the logged in user.",
+            "security": [
+                {
+                    "Bearer": []
+                }
+            ],
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "application/json"
+            ],
+            "parameters": [],
+            "responses": {
+                "scheme": {
+                    "$ref": "#/definitions/ResponseList"
+                }
+            }
+        }
+    }
+}

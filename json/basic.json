@@ -1,0 +1,51 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a sample RESTful API in Golang.",
+        "version": "0.1.0",
+        "title": "Sample API",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "email": "douglascarlini@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "host": "localhost",
+    "basePath": "/v1",
+    "tags": [
+        {
+            "name": "app",
+            "description": "Operations about apps"
+        },
+        {
+            "name": "role",
+            "description": "Operations about roles"
+        },
+        {
+            "name": "domain",
+            "description": "Operations about domains"
+        },
+        {
+            "name": "module",
+            "description": "Operations about modules"
+        },
+        {
+            "name": "action",
+            "description": "Operations about actions"
+        },
+        {
+            "name": "user",
+            "description": "Operations about users"
+        },
+        {
+            "name": "auth",
+            "description": "Operations about auth"
+        }
+    ],
+    "schemes": [
+        "http"
+    ]
+}
